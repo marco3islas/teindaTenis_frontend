@@ -1,0 +1,65 @@
+.titulo {
+  text-align: center;
+  padding: 20px;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.container {
+  max-width: 1250px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.grid {
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-bottom: 20px;
+  grid-gap: 5px;
+}
+
+.tenisCard {
+  width: 400px;
+  min-height: 600px;
+  margin-bottom: 10px;
+}
+
+.fondo1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.fondo2 {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
+
+.fondo1 img,
+.fondo2 img {
+  width: 800px;
+  height: 562px;
+  object-fit: cover;
+  object-position: center bottom;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 1240px) {
+  .grid {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 auto;
+    justify-content: space-around;
+  }
+
+  .fondo1,
+  .fondo2 {
+    display: none;
+  }
+}

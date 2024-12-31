@@ -1,0 +1,33 @@
+.mat-card {
+  max-width: 400px;
+  width: 100%;
+  color: white;
+  padding: 1px;
+  box-shadow: 2px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+mat-card img {
+  height: 320px;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-around;
+}
+.cardTitle {
+  font-size: 2.1rem;
+  margin-bottom: 8px;
+}
+
+.precio, .tallas {
+  font-weight: bolder;
+  font-size: 1.2rem;
+  margin: 20px 0;
+}
+
+.green-icon {
+  color: #4caf50; /* Utiliza el código hexadecimal del color verde que deseas */
+  font-size: 1.6rem;
+}

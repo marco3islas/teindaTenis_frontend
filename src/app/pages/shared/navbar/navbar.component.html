@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+  <mat-card-title> Tenis Rafaga </mat-card-title>
+<img class="logo" src="/assets/img/logoTenis.webp" alt="Logotipo de Tenis Rafaga" />
+  <span class="separador"></span>
+  <button *ngFor="let items of navbarItems"
+    [routerLink]="items.url"
+    mat-button>
+    <mat-icon [fontIcon]="items.icon"></mat-icon>
+    {{items.label | uppercase}}
+  </button>
+</mat-toolbar>
+

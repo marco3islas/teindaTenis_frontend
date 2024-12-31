@@ -1,0 +1,16 @@
+<h1 class="titulo">Los mejores TENIS.</h1>
+
+<div class="container">
+  <div class="grid">
+    <div class="fondo1">
+      <img src="/assets/img/tenisfondo1.jpg" alt="Foto de una persona probandose un tenis" />
+    </div>
+    <div class="tenisCard" *ngFor="let tenis of tenis">
+      <app-card [tenis]="tenis"> </app-card>
+    </div>
+
+    <div class="fondo2">
+      <img src="/assets/img/tenisfondo2.jpg" alt="Foto de una persona probandose un tenis" />
+    </div>
+  </div>
+</div>
