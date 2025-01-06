@@ -1,42 +1,47 @@
-import {NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {HomeComponent} from './home/home.component';
-import {MainComponent} from './main/main.component';
-import {TiendaComponent} from './tienda/tienda.component';
-import {AboutComponent} from './about/about.component';
-import {ContactoComponent} from './contacto/contacto.component';
+import { AboutComponent } from './about/about.component';
+import { ContactoComponent } from './contacto/contacto.component';
+import { DetailsComponent } from './details/details.component';
+import { HomeComponent } from './home/home.component';
+import { MainComponent } from './main/main.component';
+import { TiendaComponent } from './tienda/tienda.component';
 
 export const routes: Routes = [
   {
-    path:'',
+    path: '',
     component: MainComponent,
-    children:[
+    children: [
       {
         path: 'home',
-        component: HomeComponent
+        component: HomeComponent,
       },
       {
         path: 'tienda',
-        component: TiendaComponent
+        component: TiendaComponent,
+      },
+      {
+        path: 'details/:id',
+        component: DetailsComponent,
       },
       {
         path: 'about',
-        component: AboutComponent
+        component: AboutComponent,
       },
       {
         path: 'contacto',
-        component: ContactoComponent
+        component: ContactoComponent,
       },
       {
         path: '**',
-        redirectTo: 'home'
-      }
+        redirectTo: 'home',
+      },
     ],
-  }
-]
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class TenisRoutingModule {}
+export class TenisRoutingModule { }

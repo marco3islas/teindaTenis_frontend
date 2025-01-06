@@ -1,12 +1,31 @@
-<mat-toolbar color="primary">
-  <mat-card-title> Tenis Rafaga </mat-card-title>
-<img class="logo" src="/assets/img/logoTenis.webp" alt="Logotipo de Tenis Rafaga" />
-  <span class="separador"></span>
-  <button *ngFor="let items of navbarItems"
-    [routerLink]="items.url"
-    mat-button>
-    <mat-icon [fontIcon]="items.icon"></mat-icon>
-    {{items.label | uppercase}}
-  </button>
-</mat-toolbar>
-
+<mat-drawer-container autosize>
+  <mat-drawer #drawer mode="side" class="sideNavContainer">
+    <div class="sideNav">
+      <button *ngFor="let items of navbarItems" [routerLink]="items.url" mat-button>
+        <mat-icon [fontIcon]="items.icon"></mat-icon>
+        {{ items.label | uppercase }}
+      </button>
+    </div>
+    <button (click)="drawer.toggle()" mat-button>
+      Menu
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-drawer>
+  <mat-drawer-content>
+    <mat-toolbar color="primary">
+      <h1 class="logo">Tenis Rafaga</h1>
+      <span class="separador"></span>
+      @if (!isSmallScreen) {
+      <button *ngFor="let items of navbarItems" [routerLink]="items.url" mat-button>
+        <mat-icon [fontIcon]="items.icon"></mat-icon>
+        {{ items.label | uppercase }}
+      </button>
+      }
+      <button *ngIf="isSmallScreen" (click)="drawer.toggle()" mat-button>
+        Menu
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+    <router-outlet />
+  </mat-drawer-content>
+</mat-drawer-container>

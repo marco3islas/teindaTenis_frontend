@@ -1,0 +1,41 @@
+<ng-template #divLoading> </ng-template>
+<div *ngIf="tenis; else divLoading">
+  <mat-card class="container-card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>{{ tenis.titulo }}</mat-card-title>
+        <mat-card-subtitle>Jordan</mat-card-subtitle>
+        <img mat-card-xl-image src="/assets/img/{{ tenis.imagen }}" />
+      </mat-card-title-group>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="precio">${{ tenis.precio | number }}</div>
+      <div class="tallas">Tallas: {{ tenis.tallas }}</div>
+
+      <button class="shopping" mat-button mat-raised-button color="accent">
+        <mat-icon class="green-icon">shopping_cart</mat-icon>
+      </button>
+      <mat-card-content class="descripcion">
+        {{ descripcion }}
+      </mat-card-content>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-primary-button mat-raised-button (click)="likeCounter()" class="controles" color="warn">
+        <mat-icon>favorite</mat-icon>
+        LIKE
+        {{ like }}
+      </button>
+      <button mat-button mat-raised-button color="primary">
+        <mat-icon>share</mat-icon>
+        SHARE
+      </button>
+      <div class="separador"></div>
+      <button (click)="goBack()" mat-button mat-raised-button color="primary">
+        <mat-icon>arrow_back</mat-icon>
+        Regresar
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

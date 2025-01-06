@@ -1,5 +1,26 @@
 .logo {
-  height: 50px;
   width: 200px;
   object-fit: cover;
+  display: inline-block;
+}
+
+.separador {
+  flex: 1 1 auto;
+}
+
+.sideNavContainer {
+  background-color: mat-color(accent);
+}
+
+.sideNav {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 5px;
+}
+
+mat-toolbar {
+  display: flex;
+  align-items: center;
 }

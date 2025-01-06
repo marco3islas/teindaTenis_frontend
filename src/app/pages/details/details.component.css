@@ -1,0 +1,19 @@
+.container-card {
+  max-width: 600px;
+  margin: 20px;
+}
+
+mat-card-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.shopping {
+  margin-left: 80%;
+}
+
+.descripcion {
+  max-height: 80px;
+  overflow-y: hidden;
+  padding: 20px;
+}

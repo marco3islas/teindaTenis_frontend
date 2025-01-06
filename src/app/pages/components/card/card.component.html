@@ -1,27 +1,26 @@
+<mat-card (click)="onClick()" class="example-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title class="cardTitle">
+      {{ tenis.titulo | uppercase }}
+    </mat-card-title>
+  </mat-card-header>
 
-  <mat-card class="mat-card" mat-theme="warn" appearance="outlined">
-    <img mat-card-image src="/assets/img/{{tenis.imagen}}" [alt]="tenis.titulo">
+  <img mat-card-image src="assets/img/{{ tenis.imagen }}" [alt]="tenis.titulo" />
 
-    <mat-card-header>
-      <mat-card-title class="cardTitle">
-        {{tenis.titulo | uppercase}}
-      </mat-card-title>
-    </mat-card-header>
+  <!-- <mat-card-content> -->
+  <!--   <div class="precio">${{ tenis.precio | number }}</div> -->
+  <!--   <div class="tallas">Tallas: {{ tenis.tallas }}</div> -->
+  <!--   <mat-icon class="green-icon">shopping_cart</mat-icon> -->
+  <!-- </mat-card-content> -->
 
-    <mat-card-content>
-      <div class="precio">${{tenis.precio | number}}</div>
-      <div class="tallas">Tallas: {{tenis.tallas}}</div>
-      <mat-icon class="green-icon">shopping_cart</mat-icon>
-    </mat-card-content>
-
-    <mat-card-actions>
-      <button mat-primary-button mat-raised-button color="warn" >
-        <mat-icon>favorite</mat-icon>
-        LIKE
-      </button>
-      <button mat-button mat-raised-button color="primary" >
-        <mat-icon>share</mat-icon>
-        SHARE
-      </button>
-    </mat-card-actions>
-  </mat-card>
+  <!-- <mat-card-actions> -->
+  <!--   <button mat-primary-button mat-raised-button color="warn"> -->
+  <!--     <mat-icon>favorite</mat-icon> -->
+  <!--     LIKE -->
+  <!--   </button> -->
+  <!--   <button mat-button mat-raised-button color="primary"> -->
+  <!--     <mat-icon>share</mat-icon> -->
+  <!--     SHARE -->
+  <!--   </button> -->
+  <!-- </mat-card-actions> -->
+</mat-card>

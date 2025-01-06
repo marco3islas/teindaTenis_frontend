@@ -3,6 +3,15 @@
   padding: 20px;
   font-size: 40px;
   font-weight: bolder;
+  padding: 20px;
+}
+
+.titulo_small {
+  padding: 20px;
+  text-align: center;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bolder;
 }
 
 .container {
@@ -23,8 +32,13 @@
 
 .tenisCard {
   width: 400px;
-  min-height: 600px;
+  min-height: auto;
   margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.tenisCard:hover {
+  filter: drop-shadow(0 0 8px rgba(11, 110, 228, 0.8));
 }
 
 .fondo1 {
