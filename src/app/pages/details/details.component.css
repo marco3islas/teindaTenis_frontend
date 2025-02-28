@@ -9,11 +9,28 @@ mat-card-actions {
 }
 
 .shopping {
-  margin-left: 80%;
+  margin: 20px 0;
+}
+
+.precio {
+  font-size: 25px;
+  padding: 10px 0;
 }
 
 .descripcion {
   max-height: 80px;
-  overflow-y: hidden;
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 20px;
+  line-height: 20px;
 }
+
+@media screen and (max-width: 450px) {
+  .card-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+}
+

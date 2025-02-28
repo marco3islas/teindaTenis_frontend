@@ -10,6 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { CardComponent } from './components/card/card.component';
 import { DetailsComponent } from './details/details.component';
+import { CarritoComprasComponent } from './components/carrito-compras/carrito-compras.component';
 
 
 
@@ -22,7 +23,8 @@ import { DetailsComponent } from './details/details.component';
     AboutComponent,
     ContactoComponent,
     CardComponent,
-    DetailsComponent
+    DetailsComponent,
+    CarritoComprasComponent
   ],
   imports: [
     CommonModule,

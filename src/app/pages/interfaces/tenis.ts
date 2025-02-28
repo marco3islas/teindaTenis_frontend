@@ -4,4 +4,5 @@ export interface Tenis {
   precio: number;
   tallas: string;
   titulo: string;
+  description: string;
 }

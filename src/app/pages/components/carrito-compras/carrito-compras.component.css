@@ -1,0 +1,26 @@
+table {
+  width: 100%;
+}
+.carrito {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+}
+.container {
+  padding: 10px;
+  color: white;
+}
+
+.precio {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.precio-delete {
+  display: flex;
+  border: 1px solid  #000;
+  justify-content: space-around;
+}

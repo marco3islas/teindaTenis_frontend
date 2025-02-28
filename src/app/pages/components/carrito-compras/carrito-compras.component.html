@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Tenis Rafaga</h1>
+  <h2>Lista del Carrito de compras:</h2>
+  <div class="carrito" *ngFor="let item of cartItems; let i = index">
+    <div> <img src="assets/img/{{item.imagen}}" width="50" [alt]="item.titulo"> </div>
+    <div>  {{ item.titulo }}   </div>
+    <div class="precio-delte">
+      <span>{{ item.precio | currency }}</span>
+      <button color="warn" mat-mini-fab (click)="removeItem(i)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+</div>
+    <div class="total">
+    <h4>Cantidad: {{ totalItems() }}</h4>
+    <h3>Total: {{ totalAmount() | currency }}</h3>
+  </div>

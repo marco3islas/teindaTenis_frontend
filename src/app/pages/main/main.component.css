@@ -1,0 +1,12 @@
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background-color: #303030;
+}
+.text-center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}

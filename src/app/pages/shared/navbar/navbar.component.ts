@@ -1,5 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ResponsiveService } from '../../services/responsive.service';
+import { MatDialog } from '@angular/material/dialog';
+import { CarritoComprasComponent } from '../../components/carrito-compras/carrito-compras.component';
 
 @Component({
   selector: 'app-navbar',
@@ -13,10 +15,18 @@ export class NavbarComponent {
 
   public navbarItems = [
     { label: 'home', icon: 'home', url: './home' },
-    { label: 'store', icon: 'store', url: './tienda' },
     { label: 'about', icon: 'person', url: './about' },
     { label: 'contacto', icon: 'contact_page', url: './contacto' },
   ];
+
+  constructor(private dialog: MatDialog) { }
+
+  openModal(): void {
+    this.dialog.open(CarritoComprasComponent, {
+      width: '400px',
+      data: { shopping: true },
+    });
+  }
 
   get isSmallScreen() {
     return this.responsiveService.isSmallScreen();
