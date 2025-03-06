@@ -1,0 +1,14 @@
+{
+  "routes": [
+    "/",
+    "/about",
+    "/contacto",
+    "/home",
+    "/tenis",
+    "/tenis/about",
+    "/tenis/contacto",
+    "/tenis/home",
+    "/tenis/tienda",
+    "/tienda"
+  ]
+}
