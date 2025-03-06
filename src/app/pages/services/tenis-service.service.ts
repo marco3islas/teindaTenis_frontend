@@ -2,14 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, of } from 'rxjs';
 import { Tenis } from '../interfaces/tenis';
+import { environment } from '../../../environments/environments.prod';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TenisService {
-  private apiUrl = 'http://localhost:5500';
+  private apiUrl = environment.apiUrl;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getTenis(): Observable<Tenis[]> {
     return this.http.get<Tenis[]>(`${this.apiUrl}/productos`);
@@ -18,7 +19,10 @@ export class TenisService {
   getTenisDetail(id: Number): Observable<Tenis | undefined> {
     return this.http.get<Tenis>(`${this.apiUrl}/productos/${id}`)
       .pipe(
-        catchError( error => of(undefined) )
+        catchError(error => {
+          console.error('Error en los detalles del tenis', error);
+          return of(undefined);
+        })
       )
   }
 }
