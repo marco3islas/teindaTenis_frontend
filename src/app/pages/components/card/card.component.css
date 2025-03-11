@@ -34,3 +34,19 @@ mat-card-actions {
   /* Utiliza el código hexadecimal del color verde que deseas */
   font-size: 1.6rem;
 }
+
+@media screen and (max-width: 375px) {
+.mat-card {
+  max-width: 375px;
+  padding: 10px;
+}
+.cardTitle {
+  font-size: 1.8rem;
+}
+
+mat-card img {
+  margin: 0 auto;
+  width: 80%;
+}
+
+}

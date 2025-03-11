@@ -13,23 +13,55 @@
       <div class="precio">${{ tenis.precio | number }}</div>
       <div class="tallas">Tallas: {{ tenis.tallas }}</div>
 
-      <mat-card-content class="descripcion">
-        {{ tenis.description }}
+      <mat-card-content class="descripcion textoLimitado">
+        {{ descripcion }}
       </mat-card-content>
     </mat-card-content>
-      <button (click)="addToCart()" class="shopping " mat-button mat-raised-button color="accent">
+
+    <mat-card-actions class="botones">
+
+      <!-- Botón agregar item -->
+      <button
+        (click)="addToCart()"
+        class="shopping"
+        mat-raised-button
+        color="primary">
         <mat-icon class="green-icon">shopping_cart</mat-icon>
         AGREGAR.
       </button>
-
-    <mat-card-actions>
-      <button mat-primary-button mat-raised-button (click)="likeCounter()" class="controles" color="warn">
+      <!-- Botón Like -->
+      <button
+        mat-flat-button
+        [ngClass]="{
+        'mat-raised-button': !esPantallaPequena,
+        'mat-mini-fab': esPantallaPequena,
+        'controles': true
+        }"
+        (click)="likeCounter()"
+        color="warn"
+      >
         <mat-icon>favorite</mat-icon>
-        LIKE
+        <span>LIKE</span>
         {{ like }}
       </button>
-      <div class="separador"></div>
-      <button (click)="goBack()" mat-button mat-raised-button color="primary">
+
+      <!-- Botón Ver Carrito -->
+      <button
+        mat-flat-button
+        [ngClass]="{
+        'mat-raised-button': !esPantallaPequena,
+        'mat-mini-fab': esPantallaPequena,
+        'controles': true
+        }"
+        (click)="openModal()"
+        color="accent"
+      >
+        <mat-icon>shopping_cart</mat-icon>
+        <span>Ver carrito</span>
+      </button>
+
+      <!-- Botón Regresar -->
+      <button mat-flat-button (click)="goBack()" color="secondary">
         <mat-icon>arrow_back</mat-icon>
         Regresar
       </button>

@@ -1,5 +1,5 @@
 <mat-drawer-container autosize>
-  <mat-drawer #drawer mode="side" class="sideNavContainer">
+  <mat-drawer #drawer mode="over" hasBackdrop="true" class="sideNavContainer">
     <div class="sideNav">
       <button *ngFor="let items of navbarItems" [routerLink]="items.url" mat-button>
         <mat-icon [fontIcon]="items.icon"></mat-icon>
