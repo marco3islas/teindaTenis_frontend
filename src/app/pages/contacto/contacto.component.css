@@ -21,3 +21,9 @@
 .formItem {
   width: 100%;
 }
+
+.error {
+  color: #e39014;
+  font-weight: bolder;
+  padding: 5px;
+}

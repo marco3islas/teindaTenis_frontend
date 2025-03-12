@@ -1,16 +1,70 @@
 <div class="container">
   <h1>Cualquier comentario o sugerencia sera bienvenida!!!</h1>
-<form class="contactForm">
-  <mat-form-field class="contactItem">
-    <input type="text" matInput placeholder='Nombre'/>
-  </mat-form-field>
-  <mat-form-field class="contactItem">
-    <input type="email" matInput placeholder='Email'/>
-  </mat-form-field>
-  <mat-form-field class="contactItem">
-    <textarea  matInput placeholder='Deja un comentario'>
-      </textarea>
-  </mat-form-field>
-</form>
-</div>
+  <form class="contactForm" [formGroup]="contactoForm" (ngSubmit)="onSubmit()">
 
+    <mat-form-field class="contactItem">
+      <input
+       type="text"
+       formControlName="name"
+       matInput placeholder='Nombre'
+       required
+      />
+    <div>
+      <div class="error"
+       *ngIf="contactoForm.get('name')?.invalid && (contactoForm.get('name')?.dirty || contactoForm.get('name')?.touched)"
+       >
+       <div *ngIf="contactoForm.get('name')?.errors?.['required']">
+         El nombre es obligatorio
+       </div>
+       <div *ngIf="contactoForm.get('name')?.errors?.['minlength']">
+         El nombre debe tener al menos 5 caracteres
+       </div>
+      </div>
+    </div>
+    </mat-form-field>
+    <mat-form-field class="contactItem">
+      <input
+        type="email"
+        formControlName="email"
+        matInput
+        placeholder='Email'
+        required
+      />
+    <div>
+      <div class="error"
+       *ngIf="contactoForm.get('email')?.invalid && (contactoForm.get('email')?.dirty || contactoForm.get('email')?.touched)">
+       <div *ngIf="contactoForm.get('email')?.errors?.['required']">
+         El email es obligatorio
+       </div>
+       <div *ngIf="contactoForm.get('email')?.errors?.['pattern']">
+         El email no es válido
+       </div>
+      </div>
+    </div>
+    </mat-form-field>
+    <mat-form-field class="contactItem">
+      <textarea
+        matInput
+        placeholder='Deja un comentario'
+        formControlName="message"
+        required
+      >
+      </textarea>
+    <div>
+      <div class="error"
+       *ngIf="contactoForm.get('message')?.dirty || contactoForm.get('message')?.touched
+        && contactoForm.get('message')?.hasError('required')"
+        >
+        El mensaje es obligatorio
+      </div>
+      <div class="error"
+       *ngIf="contactoForm.get('message')?.dirty || contactoForm.get('message')?.touched
+        && contactoForm.get('message')?.hasError('minlength')"
+        >
+        El mensaje debe tener al menos 15 caracteres
+      </div>
+    </div>
+    </mat-form-field>
+  <button mat-raised-button color="primary">Enviar</button>
+  </form>
+</div>

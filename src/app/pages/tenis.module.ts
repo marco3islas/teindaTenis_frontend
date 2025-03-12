@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 import {MaterialModule} from '../material/material.module';
 import {TenisRoutingModule} from './tenis-pages.routing';
 import { MainComponent } from './main/main.component';
@@ -29,8 +30,8 @@ import { CarritoComprasComponent } from './components/carrito-compras/carrito-co
   imports: [
     CommonModule,
     TenisRoutingModule,
-    MaterialModule
-
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class TenisModule { }
