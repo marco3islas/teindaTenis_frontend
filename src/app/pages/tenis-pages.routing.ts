@@ -3,9 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { DetailsComponent } from './details/details.component';
-import { HomeComponent } from './home/home.component';
 import { MainComponent } from './main/main.component';
 import { TiendaComponent } from './tienda/tienda.component';
+import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
   {
@@ -14,11 +14,11 @@ export const routes: Routes = [
     children: [
       {
         path: 'home',
-        component: HomeComponent,
+        component: HomeComponent
       },
       {
         path: 'tienda',
-        component: TiendaComponent,
+        component: TiendaComponent
       },
       {
         path: 'details/:id',
