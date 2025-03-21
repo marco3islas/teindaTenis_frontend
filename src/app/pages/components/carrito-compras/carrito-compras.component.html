@@ -2,7 +2,7 @@
   <h1>Tenis Rafaga</h1>
   <h2>Lista del Carrito de compras:</h2>
   <div class="carrito" *ngFor="let item of cartItems; let i = index">
-    <div> <img src="assets/img/{{item.imagen}}" width="50" [alt]="item.titulo"> </div>
+    <div> <img src="assets/img/{{item.imagen}}.webp" width="50" [alt]="item.titulo"> </div>
     <div>  {{ item.titulo }}   </div>
     <div class="precio-delte">
       <span>{{ item.precio | currency }}</span>
