@@ -1,5 +1,6 @@
-import {Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { Tenis } from '../interfaces/tenis';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root',
@@ -7,29 +8,36 @@ import { Tenis } from '../interfaces/tenis';
 export class CartService {
   private cartItems: Tenis[] = [];
 
-  constructor() {
-    this.loadFromLocalStorage();
+  constructor(@Inject(PLATFORM_ID) private plataformId: object) {
+    this.loadFromLocalStorage()
+
   }
 
   loadFromLocalStorage(): void {
-    const savedCartItems = localStorage.getItem('cartItems');
-    if (savedCartItems) {
-      this.cartItems = JSON.parse(savedCartItems);
+    if (isPlatformBrowser(this.plataformId)) {
+      const savedCartItems = localStorage.getItem('cartItems');
+      if (savedCartItems) {
+        this.cartItems = JSON.parse(savedCartItems);
+      }
+
     }
   }
 
 
   addItem(item: Tenis): void {
     this.cartItems.push(item);
+    this.saveToLocalStorage();
   }
   removeItem(index: number): void {
     this.cartItems.splice(index, 1);
+    this.saveToLocalStorage()
   }
   getItems(): Tenis[] {
     return this.cartItems;
   }
   clearCart(): void {
     this.cartItems = [];
+    this.saveToLocalStorage()
   }
 
   totalItems(): number {
