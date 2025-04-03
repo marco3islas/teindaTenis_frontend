@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build:ssr"
+  publish = "dist/tienda-tenis/browser"
+
+[[plugins]]
+  package = "@netlify/plugin-functions-install-core"
+
+[functions]
+  included_files = ["dist/tienda-tenis/server/**/*"]
