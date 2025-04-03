@@ -13,6 +13,7 @@
         alt="Foto de una persona probandose un tenis"
       />
     </div>
+    <mat-spinner *ngIf="tenis.length < 1"></mat-spinner>
     <div class="tenisCard" *ngFor="let tenis of tenis">
       <app-card (clicked)="itemOnClick($event)" [tenis]="tenis"> </app-card>
     </div>

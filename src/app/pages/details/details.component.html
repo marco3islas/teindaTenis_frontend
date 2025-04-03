@@ -1,4 +1,6 @@
+<div class="container">
 <ng-template #divLoading> </ng-template>
+<mat-spinner *ngIf="!tenis"></mat-spinner>
 <div *ngIf="tenis; else divLoading">
   <mat-card class="container-card" appearance="outlined">
     <mat-card-header >
@@ -67,4 +69,5 @@
       </button>
     </mat-card-actions>
   </mat-card>
+</div>
 </div>
