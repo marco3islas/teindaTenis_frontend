@@ -7,3 +7,6 @@
 
 [functions]
   included_files = ["dist/tienda-tenis/server/**/*"]
+
+[build.environment]
+  NODE_VERSION = "18.19"
