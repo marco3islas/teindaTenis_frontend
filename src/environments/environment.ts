@@ -1,4 +1,5 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://127.0.0.1:5500',
+  // apiUrl: 'http://127.0.0.1:5500',
+  apiUrl: 'https://tiendatenisbackend-production.up.railway.app'
 }
