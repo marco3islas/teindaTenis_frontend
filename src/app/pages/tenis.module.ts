@@ -6,7 +6,6 @@ import {TenisRoutingModule} from './tenis-pages.routing';
 import { MainComponent } from './main/main.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
-import { TiendaComponent } from './tienda/tienda.component';
 import { AboutComponent } from './about/about.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { CardComponent } from './components/card/card.component';
@@ -20,7 +19,6 @@ import { CarritoComprasComponent } from './components/carrito-compras/carrito-co
     MainComponent,
     HomeComponent,
     NavbarComponent,
-    TiendaComponent,
     AboutComponent,
     ContactoComponent,
     CardComponent,
