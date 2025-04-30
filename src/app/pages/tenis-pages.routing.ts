@@ -17,15 +17,15 @@ export const routes: Routes = [
       },
       {
         path: 'details/:id',
-        component: DetailsComponent,
+        component: DetailsComponent
       },
       {
         path: 'about',
-        component: AboutComponent,
+        component: AboutComponent
       },
       {
         path: 'contacto',
-        component: ContactoComponent,
+          component: ContactoComponent
       },
       {
         path: '**',
