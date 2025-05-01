@@ -13,16 +13,20 @@ export class CartService {
 
   }
 
-  loadFromLocalStorage(): void {
-    if (isPlatformBrowser(this.plataformId)) {
-      const savedCartItems = localStorage.getItem('cartItems');
-      if (savedCartItems) {
+loadFromLocalStorage(): void {
+  if (isPlatformBrowser(this.plataformId)) {
+    const savedCartItems = localStorage.getItem('cartItems');
+    if (savedCartItems) {
+      try {
         this.cartItems = JSON.parse(savedCartItems);
+      } catch (e) {
+        console.error('Error al parsear cartItems desde localStorage', e);
+        localStorage.removeItem('cartItems'); // limpiar para evitar error persistente
+        this.cartItems = []; // inicializar como vacío
       }
-
     }
   }
-
+}
 
   addItem(item: Tenis): void {
     this.cartItems.push(item);
