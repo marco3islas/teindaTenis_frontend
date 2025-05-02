@@ -1,5 +1,5 @@
 
 export const environment = {
   production: true,
-  apiUrl: 'https://tienda-tenis-backend.onrender.com',
+  apiUrl: 'https://tiendatenisbackend-production.up.railway.app',
 }
