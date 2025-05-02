@@ -39,7 +39,6 @@ export class DetailsComponent implements OnInit {
       this.esPantallaPequena = window.innerWidth < 400;
     }
 
-
     this.activatedRoute.params
       .pipe(switchMap(({ id }) => this.tenisService.getTenisDetail(id)))
       .subscribe((tenis) => {
