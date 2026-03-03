@@ -13,7 +13,22 @@
 
     <mat-card-content>
       <div class="precio">${{ tenis.precio | number }}</div>
-      <div class="tallas">Tallas: {{ tenis.tallas }}</div>
+
+      <div class="tallas">
+      <label>Tallas disponibles: </label>
+
+      <button
+      *ngFor="let talla of tallasDisponibles"
+      (click)="seleccionarTalla(talla)"
+      [ngClass]="{'talla-seleccionada': talla === 'tallaSeleccionada'}"
+      [attr.aria-pressed]="talla === tallaSeleccionada ? 'true' : 'false'"
+      role="radio"
+      [attr.aria-checked]="talla === tallaSeleccionada ? 'true' : 'false'"
+      >
+       {{ talla }}
+      </button>
+      </div>
+
 
       <mat-card-content class="descripcion textoLimitado">
         {{ descripcion }}

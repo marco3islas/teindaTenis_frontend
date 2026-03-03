@@ -23,6 +23,7 @@ export class DetailsComponent implements OnInit {
 
   like: number = 0;
   shopping: number = 0;
+  tallaSeleccionada: string | null = null;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -31,7 +32,7 @@ export class DetailsComponent implements OnInit {
     private cartService: CartService,
     private dialog: MatDialog,
     @Inject(PLATFORM_ID) private plataformId: Object,
-  ) { }
+  ) {  }
 
   ngOnInit(): void {
 
@@ -60,6 +61,14 @@ export class DetailsComponent implements OnInit {
       width: '400px',
       data: { shopping: true },
     });
+  }
+
+  get tallasDisponibles(): string [] | undefined{
+    return this.tenis?.tallas?.split(',');
+  }
+
+  seleccionarTalla(talla: string):void{
+    this.tallaSeleccionada = talla;
   }
 
   @HostListener('window-resize', ['$event'])

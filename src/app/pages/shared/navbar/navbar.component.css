@@ -20,7 +20,17 @@
   padding: 5px;
 }
 
+.content_wraper {
+  position: relative;
+}
+
 mat-toolbar {
-  display: flex;
   align-items: center;
+  background-color: var(mat-toolbar-container-background-color);
+  display: flex;
+}
+.sticky-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
