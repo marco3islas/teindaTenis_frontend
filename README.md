@@ -1,27 +1,98 @@
-# TiendaTenis
+# 👟 Tienda de Tenis - Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.5.
+[![Angular](https://img.shields.io/badge/Angular-17.3.5-DD0031?style=for-the-badge&logo=angular)](https://angular.io/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-60%25-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-## Development server
+Esta es la interfaz de usuario para la **Tienda de Tenis**, una aplicación de comercio electrónico diseñada para la visualización y gestión de calzado deportivo. El proyecto está construido con **Angular 17** y consume una API REST desarrollada en **Flask**.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+> [!IMPORTANT]
+> Este proyecto es parte de mi portafolio profesional. El backend que alimenta esta interfaz se encuentra en [tienda_tenis_backend](https://github.com/marco3islas/tienda_tenis_backend).
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 📸 Demostración
 
-## Build
+![captura de pantalla](./media/tenisrafaga.webp)
+![captura de pantalla](./media/tenisdetalle.webp)
+![captura de pantalla](./media/teniscarrito.webp)
+![captura de pantalla](./media/tenisresponsive.webp)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## ✨ Características Principales
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **Catálogo Dinámico:** Visualización de productos obtenidos desde una base de datos SQLite mediante una API.
+- **Gestión de Carrito:** Funcionalidad para agregar y gestionar productos seleccionados.
+- **Interfaz Responsiva:** Diseño adaptado para diferentes tamaños de pantalla utilizando CSS moderno.
+- **Integración con Scraping:** Los datos de los productos fueron recolectados mediante herramientas de web scraping personalizadas.
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 🛠️ Stack Tecnológico
 
-## Further help
+- **Framework:** Angular 17.3.5.
+- **Lenguajes:** TypeScript (60%), HTML (26.2%), CSS (13.8%).
+- **Comunicación:** Consumo de API REST con servicios de Angular.
+- **Herramientas:** Angular CLI para scaffolding y construcción.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+---
+
+## 🚀 Instalación y Uso Local
+
+### Requisitos previos
+
+- Node.js y npm instalados.
+- Angular CLI (`npm install -g @angular/cli`).
+
+### Pasos
+
+1. **Clonar el repositorio:**
+
+   ```bash
+   git clone https://github.com/marco3islas/teindaTenis_frontend.git
+   cd teindaTenis_frontend
+   ```
+
+2. **Instalar dependencias:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Ejecutar el servidor de desarrollo:**
+
+   ```bash
+   ng serve
+   ```
+
+   Navega a `http://localhost:4200/`. La aplicación se recargará automáticamente si cambias algún archivo fuente.
+
+---
+
+## 🏗️ Arquitectura y Flujo
+
+La aplicación frontend se comunica con un backend en **Flask** que utiliza **Flask-CORS** para permitir las peticiones entre dominios. La lógica de negocio se divide en componentes de Angular para asegurar la modularidad y escalabilidad del código.
+
+---
+
+## 🛣️ Hoja de Ruta (Roadmap)
+
+Actualmente, el proyecto es una versión funcional básica, pero tengo planeado implementar:
+
+- [ ] **Sistema de Autenticación:** Integración de JWT para perfiles de usuario.
+- [ ] **Pasarela de Pagos:** Simulación de pagos con la API de Stripe.
+- [ ] **Pruebas Unitarias:** Cobertura completa de tests con Karma.
+
+---
+
+## 👤 Autor
+
+**Marco Antonio Islas**
+
+- GitHub: [@marco3islas](https://github.com/marco3islas)
+- LinkedIn: _(Tu perfil de LinkedIn aquí)_
+
+---
+
+_Este proyecto fue generado originalmente con Angular CLI versión 17.3.5._
